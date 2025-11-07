@@ -1,4 +1,4 @@
-module github.com/bcicen/go-units
+module github.com/dbrun3/go-units
 
 go 1.18
 
