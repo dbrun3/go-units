@@ -27,14 +27,14 @@ func TestVolumeSystems(t *testing.T) {
 	assert.Equal(t, SI, AttoLiter.System())
 
 	BI := "imperial"
-	assert.Equal(t, BI, Quart.System())
-	assert.Equal(t, BI, Pint.System())
-	assert.Equal(t, BI, Gallon.System())
-	assert.Equal(t, BI, FluidOunce.System())
+	assert.Equal(t, BI, ImperialQuart.System())
+	assert.Equal(t, BI, ImperialPint.System())
+	assert.Equal(t, BI, ImperialGallon.System())
+	assert.Equal(t, BI, ImperialFluidOunce.System())
 
 	US := "us"
-	assert.Equal(t, US, FluidQuart.System())
-	assert.Equal(t, US, FluidPint.System())
-	assert.Equal(t, US, FluidGallon.System())
-	assert.Equal(t, US, CustomaryFluidOunce.System())
+	assert.Equal(t, US, Quart.System())
+	assert.Equal(t, US, Pint.System())
+	assert.Equal(t, US, Gallon.System())
+	assert.Equal(t, US, FluidOunce.System())
 }
