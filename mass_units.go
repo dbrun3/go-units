@@ -34,9 +34,9 @@ var (
 	TroyOunce    = NewUnit("troy ounce", "ozt", UnitOptionAliases("oz t", "apoz", "troy oz", "fine troy ounce", "t. oz"), Mass, BI)
 
 	// us
-	Pound = NewUnit("pound", "lb", Mass, US)
-	Cwt   = NewUnit("hundredweight", "cwt", Mass, US)
-	Ton   = NewUnit("ton", "t", Mass, US)
+	Pound = NewUnit("pound", "lb", UnitOptionAliases("lbs", "pounds", "US pound", "US lb", "U.S. pound", "U.S. lb"), Mass, US)
+	Cwt   = NewUnit("hundredweight", "cwt", UnitOptionAliases("US cwt", "U.S. cwt", "US hundredweight", "U.S. hundredweight", "short hundredweight", "sh cwt"), Mass, US)
+	Ton   = NewUnit("ton", "t", UnitOptionAliases("tons", "US ton", "U.S. ton", "short ton", "sh tn", "sh ton"), Mass, US)
 
 	// other
 	Arroba  = NewUnit("arroba", "arroba", UnitOptionAliases("@", "arr"), Mass)

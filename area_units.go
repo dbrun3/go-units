@@ -8,14 +8,14 @@ var (
 	SquareKilometer  = Square(KiloMeter)
 	SquareCentimeter = Square(CentiMeter)
 	SquareMillimeter = Square(MilliMeter)
-	Hectare          = NewUnit("hectare", "ha", Area, SI)
+	Hectare          = NewUnit("hectare", "ha", UnitOptionAliases("hectares", "ha."), Area, SI)
 
 	// imperial/us - using imperial length units from length_units.go
 	SquareInch = Square(Inch)
 	SquareFoot = Square(Foot)
 	SquareYard = Square(Yard)
 	SquareMile = Square(Mile)
-	Acre       = NewUnit("acre", "ac", UnitOptionAliases("acres", "a"), Area, US)
+	Acre       = NewUnit("acre", "ac", UnitOptionAliases("acres", "a", "US acre", "U.S. acre"), Area, US)
 )
 
 func init() {
