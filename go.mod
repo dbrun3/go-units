@@ -2,6 +2,8 @@ module github.com/dbrun3/go-units
 
 go 1.18
 
+retract v1.1.4 // Cached bad version on proxy.golang.org
+
 require (
 	github.com/Knetic/govaluate v3.0.0+incompatible
 	github.com/bcicen/bfstree v1.0.0
