@@ -13,7 +13,7 @@ package main
 
 import (
 	"fmt"
-	u "github.com/bcicen/go-units"
+	u "github.com/dbrun3/go-units"
 )
 
 func main() {
