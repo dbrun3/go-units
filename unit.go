@@ -19,6 +19,8 @@ type Unit struct {
 	plural   string // either "none", "auto", or a specific plural name
 	aliases  []string
 	system   string
+
+	allNames []string
 }
 
 // NewUnit registers a new Unit within the package, returning the newly created Unit
@@ -37,13 +39,14 @@ func NewUnit(name, symbol string, opts ...UnitOption) Unit {
 		u = opt(u)
 	}
 
+	u.allNames = u.names()
 	unitMap[name] = u
 	unitSliceInstance.Reset()
 	return u
 }
 
 // Returns all names and symbols this unit may be referred to
-func (u Unit) Names() []string {
+func (u Unit) names() []string {
 	names := []string{u.Name}
 	if u.Symbol != "" {
 		names = append(names, u.Symbol)
@@ -52,6 +55,11 @@ func (u Unit) Names() []string {
 		names = append(names, u.PluralName())
 	}
 	return append(names, u.aliases...)
+}
+
+// Returns cached list of names
+func (u Unit) Names() []string {
+	return u.allNames
 }
 
 // Return the system of units this Unit belongs to, if any
