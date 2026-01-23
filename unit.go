@@ -38,6 +38,7 @@ func NewUnit(name, symbol string, opts ...UnitOption) Unit {
 	}
 
 	unitMap[name] = u
+	unitSliceInstance.Reset()
 	return u
 }
 

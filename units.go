@@ -7,14 +7,22 @@ import (
 	"strings"
 )
 
-// Return all registered Units, sorted by name and quantity
+var (
+	unitSlice         []Unit
+	unitSliceInstance resyncOnce
+)
+
+// Return all registered Units, sorted by name and quantity. Cache value
 func All() []Unit {
-	units := make(UnitList, 0, len(unitMap))
-	for _, u := range unitMap {
-		units = append(units, u)
-	}
-	sort.Sort(units)
-	return []Unit(units)
+	unitSliceInstance.Do(func() {
+		units := make(UnitList, 0, len(unitMap))
+		for _, u := range unitMap {
+			units = append(units, u)
+		}
+		sort.Sort(units)
+		unitSlice = []Unit(units)
+	})
+	return unitSlice
 }
 
 // MustConvertFloat converts a provided float from one Unit to another, panicking on error
